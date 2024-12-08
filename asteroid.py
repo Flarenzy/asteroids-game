@@ -1,4 +1,5 @@
 import random
+
 import pygame
 
 from circleshape import CircleShape
@@ -26,4 +27,4 @@ class Asteroid(CircleShape):
         a1 = Asteroid(self.position.x, self.position.y, asteroid1_radius)
         a2 = Asteroid(self.position.x, self.position.y, asteroid2_radius)
         a1.velocity = asteroid1_velocity * 1.2
-        a2.velocity = asteroid2_velocity 
+        a2.velocity = asteroid2_velocity
