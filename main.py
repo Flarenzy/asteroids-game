@@ -45,7 +45,11 @@ def main():
                 print("Game over!")
                 pygame.time.wait(5000)
                 raise SystemExit("Game has finished!")
-            
+            for bullet in shots:
+                if element.collisions(bullet):
+                    element.kill()
+                    bullet.kill()
+
         player1.move(dt=dt)
         for element in drawable:
             element.draw(screen)
