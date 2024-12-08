@@ -40,14 +40,13 @@ def main():
         screen.fill(color="black")
         for element in updatable:
             element.update(dt)
-        for element in asteroids:
-            if element.collisions(player1):
+        for asteroid in asteroids:
+            if asteroid.collisions(player1):
                 print("Game over!")
-                pygame.time.wait(5000)
                 raise SystemExit("Game has finished!")
             for bullet in shots:
-                if element.collisions(bullet):
-                    element.kill()
+                if asteroid.collisions(bullet):
+                    asteroid.split()
                     bullet.kill()
 
         player1.move(dt=dt)
